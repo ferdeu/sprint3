@@ -62,22 +62,17 @@
 
 
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="./css/estilo.css">
 
 </head>
 
 <body>
-  <header>
-    <a href="./index.php">
-    <div class="logo"><img src="img/logo-home2.png" alt="logotipo" class="logo1">
-      </a>
-    </div>
-  </header>
-  <h1>Iniciar Sesion</h1>
-
   <form class="login" action="" method="post">
 
-
+		<div class="imgcontainer"><a href="./index.php">
+			<img src="img/logo-home2.png" alt="Avatar" class="avatar"></a>
+		</div>
+		<h1>Iniciar Sesión</h1>
     <?php
 		//Si no existe el usuario
 		if ($usuario):
@@ -97,10 +92,9 @@
     </div>
     <?php endif; ?>
 
-
-
+<div class="container">
       <div>
-        <label for="email">Email</label>
+        <label for="email"><b>Email<b/></label>
         <input type="text" name="email" id="email" required
 				value="<?= existeParametro('email',$_COOKIE) ? $_COOKIE['email'] : $email ?>">
   			<?php if($error && !$email):?>
@@ -109,7 +103,7 @@
       </div>
 
       <div>
-        <label for="password">Contraseña</label>
+        <label for="password"><b>Contraseña</b></label>
         <input type="password" name="password" id="password" required value="<?= existeParametro('password',$_COOKIE) ? $_COOKIE['password'] : $password ?>">
         <?php if($error && !$password):?>
   				<span>Ingrese su password</span>
@@ -119,22 +113,18 @@
 			<div>
 				<input type="checkbox" name="recordarUsuario" value="recordar"
 				<?php if(existeParametro('recordar',$_COOKIE)):?> checked <?php endif; ?>>
-				<label for="recordarUsuario">Recordar Usuario</label>
+				<label for="recordarUsuario"><b>Recordar Usuario</b></label>
       </div>
 
 
       <div class="actions">
-        <input type="submit" name="login" value="Login"> <a href="/forgot">Olvidé mi contraseña</a>
-      </div>
-
-      <footer>
-        <ul>
-          <li><a href="./index.php"><h5>Home</i></h5></a></li>
-          <li><a href="./presupuestos.php"><h5>Presupuestos</i></h5></a></li>
-          <li><a href="./registro.php"><h5>Registrate</i></h5></a></li>
-          <li><a href="./faq.php"><h5>FAQ</i></h5></a></li>
-        </ul>
-      </footer>
+				<button type="submit" name="login" value="Login">Login</button>
+				<div class="container" style="background-color:#f1f1f1">
+		   	<button type="button" class="cancelbtn"><a href="./index.php" style="color:white;text-decoration:none">Cancel</a></button>
+		   	<span class="psw"><a href="/forgot" style="text-decoration: none;">Olvidé mi contraseña</b></span>
+		 		</div>
+			</div>
+		</div>
   </form>
 
 </body>

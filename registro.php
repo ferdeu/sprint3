@@ -53,63 +53,58 @@ $existeFile = existeFileSinError('imagenperfil');
     <title>BudgetFork</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-  <link rel="stylesheet" href="./css/reg.css">
+  <link rel="stylesheet" href="./css/estilo.css">
 
 </head>
 
 <body>
-  <header>
-    <a href="./index.php">
-    <div class="logo"><img src="img/logo-home2.png" alt="logotipo" class="logo1">
-      </a>
-    </div>
-  </header>
-
-  <h1>Registrate</h1>
-
   <form class="login" action="" method="post" enctype="multipart/form-data">
+		<div class="imgcontainer"><a href="./index.php">
+			<img src="img/logo-home2.png" alt="Avatar" class="avatar"></a>
+		</div>
+		  <h1>Registrate!</h1>
 		<?php if($existeUsuario): ?>
 			<p>
 				<span>Error: El email ingresado (<?= $_POST['email'] ?>) ya existe en la base de datos. Por favor use un email diferente.</span>
 			</p>
 		<?php endif; ?>
-
-			<div><label for="nombre">Nombre</label>
+		<div class="container">
+			<div><label for="nombre"><b>Nombre<b/></label>
 			<input type="text" name="nombre" class="input_text" value="<?= $nombre ?>" required >
 			<?php if($error && !$nombre):?>
 				<span>Ingrese su nombre</span>
 			<?php endif; ?>
       </div>
 
-			<div><label for="apellido">Apellido</label>
+			<div><label for="apellido"><b>Apellido</b></label>
 				<input type="text" name="apellido" class="input_text" value="<?= $apellido ?>" required >
   			<?php if($error && !$apellido):?>
   				<span>Ingrese su Apellido</span>
   			<?php endif; ?>
       </div>
 
-			<div><label for="edad">Edad</label>
+			<div><label for="edad"><b>Edad</b></label>
 				<input type="text" name="edad" class="input_text" value="<?= $edad ?>" required >
 				<?php if($error && !$edad):?>
 					<span>Ingrese su Edad</span>
 				<?php endif; ?>
 			</div>
 
-      <div><label for="email">Email</label>
+      <div><label for="email"><b>Email</b></label>
         <input type="text" name="email" id="email" value="<?= $email ?>" required>
   			<?php if($error && !$email):?>
   				<span>Ingrese su email</span>
   			<?php endif; ?>
       </div>
 
-      <div><label for="password">Contraseña</label>
+      <div><label for="password"><b>Contraseña</b></label>
         <input type="password" name="password" id="password" required>
         <?php if($error && !$password):?>
   				<span>Ingrese su password</span>
   			<?php endif; ?>
       </div>
 
-			<div><label for="confirmarpassword">Confirmar Contraseña</label>
+			<div><label for="confirmarpassword"><b>Confirmar Contraseña</b></label>
 				<input type="password" name="confirmarpassword" id="confirmarpassword" required>
 				<?php if(($error && !$confirmarpassword) || ($password != $confirmarpassword)):?>
 				<span>Las contraseñas no coinciden</span>
@@ -117,28 +112,22 @@ $existeFile = existeFileSinError('imagenperfil');
 			</div>
 
 
-     <div><label for="imagenperfil">Foto de Perfil</label>
+     <div style="padding: 2% 0;"><label for="imagenperfil"><b>Foto de Perfil</b></label>
         <input type="file" name="imagenperfil">
         <?php  if($error && !$existeFile):?>
           <span>Ingrese su foto de perfil</span>
         <?php endif; ?>
       </div>
-
+			<a href="/forgot" style="text-decoration: none;">Olvidé mi contraseña</b>
       <div class="actions">
-        <input type="submit" name="registro" value="Registrarse">
-				<a href="/forgot">Olvidé mi contraseña</a>
+        <button type="submit" name="registro" value="Registrarse">Registrarse</button>
       </div>
+			<div class="container" style="background-color:#f1f1f1">
+			<footer>
+					<li><a href="./index.php" style="text-decoration:none;color:black"><h5>Home</i></h5></a></li>
+			</footer>
+			</div>
+		</div>
   </form>
-
-
-  <footer>
-    <ul>
-      <li><a href="./index.php"><h5>Home</i></h5></a></li>
-      <li><a href="./presupuestos.php"><h5>Presupuestos</i></h5></a></li>
-      <li><a href="./login.php"><h5>Login</i></h5></a></li>
-      <li><a href="./faq.php"><h5>FAQ</i></h5></a></li>
-    </ul>
-  </footer>
 </body>
-
 </html>
