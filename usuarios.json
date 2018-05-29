@@ -1,0 +1,21 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Fernando",
+            "apellido": "Deu",
+            "email": "deufernando@hotmail.com",
+            "password": "$2y$10$2KZ3jU8phnAxJOsrdFVY8uozBf7zeUJpkTOTJLsjDHVuzaUtdZplG",
+            "edad": "29",
+            "avatar": ".\/avatar\/imagen_perfil_1527559834.png",
+            "fillable": [
+                "nombre",
+                "apellido",
+                "email",
+                "password",
+                "edad",
+                "avatar"
+            ]
+        }
+    ]
+}
